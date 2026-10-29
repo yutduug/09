@@ -5,23 +5,25 @@
 int main(void)
 {
     int i;
-    int sum;
-    int average;
-    int grade[SIZE];
-
-    sum = 0;
+    int a[SIZE] = {1, 2, 3, 4, 5};
+    int b[SIZE] = {1, 2, 9, 4, 8};
+    int all_same = 1;
 
     for (i = 0; i < SIZE; i++)
     {
-        printf("학생 성적을 입력하세요: ");
-        scanf("%d", &grade[i]);
+        if (a[i] != b[i])
+        {
+            printf("index %d: a[%d] = %d, b[%d] = %d\n",
+                   i, i, a[i], i, b[i]);
 
-        sum += grade[i];
+            all_same = 0;
+        }
     }
 
-    average = sum / SIZE;
-
-    printf("성적 평균: %d\n", average);
+    if (all_same == 1)
+    {
+        printf("배열은 같은 값을 가집니다.\n");
+    }
 
     return 0;
 }
